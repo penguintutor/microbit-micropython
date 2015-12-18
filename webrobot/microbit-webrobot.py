@@ -79,16 +79,16 @@ def motor_change (x, direction) :
         else: return (2, 2) 
     # when +2 or -2 then that side goes reverse and opposite side goes forward
     # when +1 or -1 then that side stop and opposite side goes forward
-    if (x == -2) :
+    if (x == 2) :
         if (direction > 0): return (2, 1) 
         else: return (1, 2)
-    if (x == -1) :
+    if (x == 1) :
         if (direction > 0): return (0, 1)
         else: return (0, 2)
-    if (x == 1) :
+    if (x == -1) :
         if (direction > 0): return (1, 0)
         else: return (2, 0) 
-    if (x == 2) :
+    if (x == -2) :
         if (direction > 0): return (1, 2) 
         else: return (2, 1)
     # catch anything else and return stop

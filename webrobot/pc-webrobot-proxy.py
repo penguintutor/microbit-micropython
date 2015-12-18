@@ -1,7 +1,7 @@
 import serial
 import urllib.request
 
-roboturl = 'http://10.0.5.1'
+roboturl = 'http://10.5.5.1'
 
 ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
 
@@ -13,4 +13,5 @@ while True:
     if (cmd):
         fetch_url = roboturl + cmd
         print (fetch_url)
-        req = urllib.request.Request(fetch_url)
+        response = urllib.request.urlopen(fetch_url)
+        print (response.read())
